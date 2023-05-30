@@ -1,5 +1,4 @@
 // const { model } = require("mongoose")
-const product = require("../model/product")
 const Product = require("../model/product")
 
 // get product
@@ -36,7 +35,6 @@ const CreateProduct = async (req,res) =>{
 
         await newProducts.save()
         res.status(201).json({product:newProducts})
-
     } catch (error) {
         console.log("Error creating produt",error)
         res.status(500).json({error:"internal server error"})

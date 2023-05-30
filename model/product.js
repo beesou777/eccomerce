@@ -26,7 +26,7 @@ const productSchema = new mongoose.Schema({
     },
     feature:{
         type:[String],
-        default:[]
+        default:"new"
     },
     created:{
         type:Date,

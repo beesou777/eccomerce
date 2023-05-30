@@ -2,14 +2,16 @@ require("dotenv").config()
 const express = require('express')
 const app = express()
 const connectdb = require('./db/connect')
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 4000
 const product_routes = require("./routes/product")
+const order_routes = require("./routes/order")
 
 app.use(express.json())
 
 
 // midleware or set router
 app.use('/api/product',product_routes)
+app.use('/api/order',order_routes)
 
 
 
