@@ -5,14 +5,14 @@ const connectdb = require('./db/connect')
 const PORT = process.env.PORT || 4000
 const product_routes = require("./routes/product")
 const order_routes = require("./routes/order")
-
+const cors = require('cors')
 app.use(express.json())
 
 
 // midleware or set router
 app.use('/api/product',product_routes)
 app.use('/api/order',order_routes)
-
+app.use(cors())
 
 
 const start = async ()=>{
