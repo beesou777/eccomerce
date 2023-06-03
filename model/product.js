@@ -3,7 +3,7 @@ const mongoose = require("mongoose")
 const productSchema = new mongoose.Schema({
     product_name:{
         type:String,
-        required:true
+        required:[true,"product_name must be provided"]
     },
     regular_price:{
         type:Number,
@@ -19,7 +19,7 @@ const productSchema = new mongoose.Schema({
     },
     product_image:{
         type:String,
-        required:true
+        required:[true,"image must be provided"]
     },
     product_categorie:{
         type:String,
