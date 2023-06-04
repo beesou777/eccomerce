@@ -36,6 +36,7 @@ const createProduct = async (req, res) => {
     const basePath = `${req.protocol}://${req.get('host')}/upload/`;
     let product = new Product({
       product_name: req.body.product_name,
+      feature: req.body.feature,
       product_image: `${basePath}${fileName}`,
       product_unit: req.body.product_unit,
       regular_price: req.body.regular_price,
