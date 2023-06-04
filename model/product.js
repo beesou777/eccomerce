@@ -15,7 +15,6 @@ const productSchema = new mongoose.Schema({
     },
     product_unit:{
         type:Number,
-        default:0,
     },
     product_image:{
         type:String,
@@ -26,7 +25,6 @@ const productSchema = new mongoose.Schema({
     },
     feature:{
         type:String,
-        default:"new"
     },
     created:{
         type:Date,
