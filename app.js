@@ -6,11 +6,11 @@ const connectdb = require("./db/connect");
 const PORT = process.env.PORT || 4000;
 const product_routes = require("./routes/product");
 const order_routes = require("./routes/order");
+const auth = require("./routes/Auth")
 
 // Increase payload size limit
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
-
 app.use('/upload', express.static('upload'));
 
 // Enable CORS for all origins
@@ -19,7 +19,7 @@ app.use(cors());
 // Set routes
 app.use("/api/product", product_routes);
 app.use("/api/order", order_routes);
-
+app.use("/api/admin",auth)
 const start = async () => {
   try {
     await connectdb(process.env.MONGODB_URL);
